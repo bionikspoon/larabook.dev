@@ -17,8 +17,8 @@
     <![endif]-->
   </head>
   <body>
-    <h1>@yield('title')</h1>
     <div class="container">
+    @include('layouts.partials.nav')
       @yield('content')
     </div>
 
