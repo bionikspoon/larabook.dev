@@ -11,7 +11,9 @@
 	"require-dev": {
 		"way/generators": "~2.0",
 		"codeception/codeception": "~2.0",
-		"laracasts/testdummy": "dev-master"
+		"laracasts/testdummy": "dev-master",
+		"barryvdh/laravel-ide-helper": "1.11.*@dev",
+		"doctrine/dbal": "2.6.*@dev"
 	},
 	"autoload": {
 		"classmap": [
@@ -30,6 +32,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
+	        "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
