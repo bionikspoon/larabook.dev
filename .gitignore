@@ -5,6 +5,7 @@ composer.lock
 .env.*.php
 .env.php
 .DS_Store
+_ide_helper.php
 
 # Windows image file caches
 Thumbs.db
@@ -55,3 +56,7 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+tests/_output/*
+
+# php storm
+.idea*
