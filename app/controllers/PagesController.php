@@ -5,4 +5,8 @@ class PagesController extends \BaseController {
 	{
 		return View::make('pages.home');
 	}
+
+	public function phpinfo(){
+		return View::make('pages.phpinfo');
+	}
 }
