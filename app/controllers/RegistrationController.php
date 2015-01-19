@@ -1,15 +1,7 @@
 <?php
-use Larabook\Forms\RegistrationForm;
-use Laracasts\Validation\FormValidationException;
 
 class RegistrationController extends \BaseController {
 
-	private $registrationForm;
-
-	function __contruct(RegistrationForm $registrationForm)
-	{
-		$this->registrationForm = $registrationForm;
-	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -24,11 +16,12 @@ class RegistrationController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
+		$validator = Validator::make($input, User::$rules);
 
-		try {
-			$this->registrationForm->validate($input);
-		} catch (FormValidationException $e) {
-			return Redirect::back()->withInput()->withErrors($e->getErrors());
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$user = User::create(

@@ -14,7 +14,8 @@
 		"codeception/codeception": "~2.0",
 		"laracasts/testdummy": "dev-master",
 		"barryvdh/laravel-ide-helper": "1.11.*@dev",
-		"doctrine/dbal": "2.6.*@dev"
+		"doctrine/dbal": "2.6.*@dev",
+		"barryvdh/laravel-debugbar": "1.8.*@dev"
 	},
 	"autoload": {
 		"classmap": [
