@@ -12,6 +12,14 @@ class RegistrationController extends \BaseController
 
     use CommandBus;
 
+    /**
+     * Filter Guests
+     */
+    public function __construct()
+    {
+        $this->beforeFilter('guest');
+    }
+
 
     /**
      * Show the form for creating a new resource.
