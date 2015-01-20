@@ -10,45 +10,45 @@ use Larabook\Users\User;
 class RegistrationController extends \BaseController
 {
 
-	use CommandBus;
+    use CommandBus;
 
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /registration/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('registration.create');
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /registration/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('registration.create');
+    }
 
-	/**
-	 * New User
-	 * @return $this|\Illuminate\Http\RedirectResponse
-	 */
-	public function store()
-	{
-		$validator = User::validator(Input::all(), User::$rules);
+    /**
+     * New User
+     *
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        $validator = User::validator(Input::all(), User::$rules);
 
-		if($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
 
-		extract(Input::only('username', 'email', 'password'));
+        extract(Input::only('username', 'email', 'password'));
 
 
-		/** @var string $username */
-		/** @var string $email */
-		/** @var string $password */
-		$user = $this->execute(
-			new RegisterUserCommand($username, $email, $password)
-		);
+        /** @var string $username */
+        /** @var string $email */
+        /** @var string $password */
+        $user = $this->execute(
+            new RegisterUserCommand($username, $email, $password)
+        );
 
-		Auth::login($user);
+        Auth::login($user);
 
-		return Redirect::home();
-	}
+        return Redirect::home();
+    }
 }
