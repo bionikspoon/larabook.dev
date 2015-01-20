@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -13,8 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
-
+	'debug'     => true,
 	/*
 	|--------------------------------------------------------------------------
 	| Application URL
@@ -26,8 +25,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://larabook.app',
-
+	'url'       => 'http://larabook.app',
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
@@ -42,7 +40,6 @@ return array(
 	'providers' => append_config([
 		'Barryvdh\Debugbar\ServiceProvider',
 	]),
-
 	/*
 	|--------------------------------------------------------------------------
 	| Class Aliases
@@ -54,8 +51,8 @@ return array(
 	|
 	*/
 
-	'aliases' => append_config([
+	'aliases'   => append_config([
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 	]),
 
-);
+];

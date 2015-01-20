@@ -3,6 +3,7 @@
 
 /**
  * Class UserRepository
+ *
  * @package Larabook\Users
  */
 class UserRepository
@@ -12,6 +13,7 @@ class UserRepository
      * Persist a User
      *
      * @param User $user
+     *
      * @return mixed
      */
     public function save(User $user)

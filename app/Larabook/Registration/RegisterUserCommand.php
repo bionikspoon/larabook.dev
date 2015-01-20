@@ -3,6 +3,7 @@
 
 /**
  * Class RegisterUserCommand
+ *
  * @package Larabook\Registration
  */
 class RegisterUserCommand
