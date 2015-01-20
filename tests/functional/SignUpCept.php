@@ -1,6 +1,6 @@
-<?php 
+<?php
+/** @var object $scenario */
 $I = new FunctionalTester($scenario);
-$I->am('a guest');
 $I->wantTo('sign up for a Larabook account');
 
 $I->amOnPage('/');
