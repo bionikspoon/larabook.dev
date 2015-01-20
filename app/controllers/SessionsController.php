@@ -1,7 +1,21 @@
 <?php
 
+use Larabook\Forms\SignInForm;
+use Laracasts\Validation\FormValidationException;
+
 class SessionsController extends \BaseController
 {
+    /**
+     * @var SignInForm
+     */
+    private $signInForm;
+
+    public function __construct(SignInForm $signInForm)
+    {
+        $this->signInForm = $signInForm;
+
+        $this->beforeFilter('guest', ['except' => 'destroy']);
+    }
 
     /**
      * Display a listing of the resource.
@@ -33,59 +47,31 @@ class SessionsController extends \BaseController
      */
     public function store()
     {
-        //
+        // fetch the form input
+        $input = Input::only('email', 'password');
+        // validate the form
+        try {
+            $this->signInForm->validate($input);
+
+        } catch (FormValidationException $exception) {
+            return Redirect::back()->withErrors($exception->getErrors())->withInput();
+
+        }
+        // if invalid go back
+        // if valid, try to sign in
+        if (Auth::attempt($input)) {
+            // redirect to statuses
+            Flash::message('Welcome back!');
+
+            return Redirect::intended('/statuses');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     * GET /sessions/{id}
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
+    public function destroy()
     {
-        //
-    }
+        Auth::logout();
+        Flash::message('You have now been logged out.');
 
-    /**
-     * Show the form for editing the specified resource.
-     * GET /sessions/{id}/edit
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+        return Redirect::home();
     }
-
-    /**
-     * Update the specified resource in storage.
-     * PUT /sessions/{id}
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * DELETE /sessions/{id}
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
 }

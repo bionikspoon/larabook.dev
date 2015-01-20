@@ -1,12 +1,23 @@
 <?php
 
-class PagesController extends \BaseController {
-	public function home()
-	{
-		return View::make('pages.home');
-	}
+/**
+ * Class PagesController
+ */
+class PagesController extends \BaseController
+{
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function home()
+    {
+        return View::make('pages.home');
+    }
 
-	public function phpinfo(){
-		return View::make('pages.phpinfo');
-	}
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function phpinfo()
+    {
+        return View::make('pages.phpinfo');
+    }
 }
