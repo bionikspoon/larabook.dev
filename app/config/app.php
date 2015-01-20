@@ -14,7 +14,6 @@ return [
     */
 
     'debug'           => false,
-
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -27,7 +26,6 @@ return [
     */
 
     'url'             => 'http://localhost',
-
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -40,7 +38,6 @@ return [
     */
 
     'timezone'        => 'UTC',
-
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -53,7 +50,6 @@ return [
     */
 
     'locale'          => 'en',
-
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -66,7 +62,6 @@ return [
     */
 
     'fallback_locale' => 'en',
-
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -79,9 +74,7 @@ return [
     */
 
     'key'             => 'FwCECgayByHAlsYpiuhWj5SvWF3ltcZo',
-
     'cipher'          => MCRYPT_RIJNDAEL_128,
-
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -127,7 +120,6 @@ return [
         'Laracasts\Validation\ValidationServiceProvider',
         'Laracasts\Flash\FlashServiceProvider'
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Service Provider Manifest
@@ -140,7 +132,6 @@ return [
     */
 
     'manifest'        => storage_path() . '/meta',
-
     /*
     |--------------------------------------------------------------------------
     | Class Aliases

@@ -41,7 +41,7 @@ class RegisterUserCommandHandler implements CommandHandler
         );
 
         $this->repository->save($user);
-        
+
         $this->dispatchEventsFor($user);
 
 

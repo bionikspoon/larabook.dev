@@ -29,7 +29,7 @@
                             <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
-                    @else
+                @else
                     <li><a href="/login">Log In</a></li>
                 @endif
             </ul>

@@ -4,6 +4,7 @@ use App;
 
 /**
  * Class CommandBus
+ *
  * @package Larabook\Core
  */
 trait CommandBus
@@ -11,6 +12,7 @@ trait CommandBus
 
     /**
      * Execute Command
+     *
      * @param $command
      */
     public function execute($command)
@@ -20,6 +22,7 @@ trait CommandBus
 
     /**
      * Fetch Command bus
+     *
      * @return mixed
      */
     public function getCommandBus()

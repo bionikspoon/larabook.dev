@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,8 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'file',
-
+	'driver'     => 'file',
 	/*
 	|--------------------------------------------------------------------------
 	| File Cache Location
@@ -28,8 +27,7 @@ return array(
 	|
 	*/
 
-	'path' => storage_path().'/cache',
-
+	'path'       => storage_path() . '/cache',
 	/*
 	|--------------------------------------------------------------------------
 	| Database Cache Connection
@@ -42,7 +40,6 @@ return array(
 	*/
 
 	'connection' => null,
-
 	/*
 	|--------------------------------------------------------------------------
 	| Database Cache Table
@@ -54,8 +51,7 @@ return array(
 	|
 	*/
 
-	'table' => 'cache',
-
+	'table'      => 'cache',
 	/*
 	|--------------------------------------------------------------------------
 	| Memcached Servers
@@ -67,12 +63,11 @@ return array(
 	|
 	*/
 
-	'memcached' => array(
+	'memcached'  => [
 
-		array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 100),
+		['host' => '127.0.0.1', 'port' => 11211, 'weight' => 100],
 
-	),
-
+	],
 	/*
 	|--------------------------------------------------------------------------
 	| Cache Key Prefix
@@ -84,6 +79,6 @@ return array(
 	|
 	*/
 
-	'prefix' => 'laravel',
+	'prefix'     => 'laravel',
 
-);
+];
