@@ -2,7 +2,7 @@
 
 use Laracasts\Validation\FormValidator;
 /**
-* 
+*
 */
 class RegistrationForm extends FormValidator
 {

@@ -2,8 +2,9 @@
 
 @section('content')
     <h1>Sign in!</h1>
+    @include('layouts.partials.errors')
 
-    {{Form::open()}}
+    {{Form::open(['route' => 'login_path'])}}
 
     <!-- $ Form Input -->
     <div class="form-group">
@@ -18,6 +19,5 @@
     <div class="form-group">
         {{Form::submit('Sign In', ['class' => 'btn btn-primary'])}}
     </div>
-
     {{Form::close()}}
 @stop
