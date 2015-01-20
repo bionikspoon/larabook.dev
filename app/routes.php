@@ -16,3 +16,18 @@ Route::get('register', ['as' => 'register_path', 'uses' => 'RegistrationControll
 Route::post('register', ['as' => 'register_path', 'uses' => 'RegistrationController@store']);
 
 Route::get('phpinfo', ['as' => 'phpinfo', 'uses' => 'PagesController@phpinfo']); //TODO remove
+
+Route::get('login', [
+    'as'   => 'login_path',
+    'uses' => 'SessionsController@create'
+]);
+Route::post('login', [
+    'as'   => 'login_path',
+    'uses' => 'SessionsController@store'
+]);
+Route::get('logout', [
+    'as'   => 'logout_path',
+    'uses' => 'SessionsController@destroy'
+]);
+
+Route::get('statuses', 'StatusController@index');

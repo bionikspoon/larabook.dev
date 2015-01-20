@@ -7,9 +7,12 @@
     <div class="jumbotron">
         <h1>Welcome to Larabook!</h1>
         <p>Welcome tot he primer place to talk about laravel with others. Why don't you sign up to see what the fuss is about?</p>
-        <p>
-            {{HTML::linkRoute('register_path', 'Sign Up!', null, ['class' => 'btn btn-lg btn-primary'])}}
-        </p>
+
+        @if (!$currentUser)
+            <p>
+                {{HTML::linkRoute('register_path', 'Sign Up!', null, ['class' => 'btn btn-lg btn-primary'])}}
+            </p>
+        @endif
     </div>
 @stop
 

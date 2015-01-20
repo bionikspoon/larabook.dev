@@ -12,6 +12,14 @@ class RegistrationController extends \BaseController
 
     use CommandBus;
 
+    /**
+     * Filter Guests
+     */
+    public function __construct()
+    {
+        $this->beforeFilter('guest');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,6 +56,8 @@ class RegistrationController extends \BaseController
         );
 
         Auth::login($user);
+
+        Flash::message('Glad to have you as a new Larabook member');
 
         return Redirect::home();
     }
