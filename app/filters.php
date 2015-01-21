@@ -38,7 +38,6 @@ Route::filter('auth', function () {
             return Redirect::guest('login');
         }
     }
-    return true;
 });
 
 Route::filter('auth.basic', function () {
@@ -60,7 +59,6 @@ Route::filter('guest', function () {
     if (Auth::check()) {
         return Redirect::to('/');
     }
-    return true;
 });
 
 /*
