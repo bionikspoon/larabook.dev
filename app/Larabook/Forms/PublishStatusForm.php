@@ -2,11 +2,9 @@
 
 use Laracasts\Validation\FormValidator;
 
-
-class SignInForm extends FormValidator
+class PublishStatusForm extends FormValidator
 {
     protected $rules = [
-        'email'    => 'required',
-        'password' => 'required',
+        'body' => 'required',
     ];
 }
