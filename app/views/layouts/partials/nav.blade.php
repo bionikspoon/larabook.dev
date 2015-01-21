@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownTarget -->
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
     <div class="container">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -30,7 +31,7 @@
                         </ul>
                     </li>
                 @else
-                    <li><a href="/login">Log In</a></li>
+                    <li><a href="login">Log In</a></li>
                 @endif
             </ul>
         </div>

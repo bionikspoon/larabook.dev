@@ -3,6 +3,9 @@
 use Larabook\Forms\SignInForm;
 use Laracasts\Validation\FormValidationException;
 
+/**
+ * Class SessionsController
+ */
 class SessionsController extends \BaseController
 {
     /**
@@ -10,6 +13,9 @@ class SessionsController extends \BaseController
      */
     private $signInForm;
 
+    /**
+     * @param SignInForm $signInForm
+     */
     public function __construct(SignInForm $signInForm)
     {
         $this->signInForm = $signInForm;
@@ -45,6 +51,7 @@ class SessionsController extends \BaseController
      *
      * @return Response
      */
+    /** @noinspection PhpInconsistentReturnPointsInspection */
     public function store()
     {
         // fetch the form input
@@ -52,10 +59,8 @@ class SessionsController extends \BaseController
         // validate the form
         try {
             $this->signInForm->validate($input);
-
         } catch (FormValidationException $exception) {
             return Redirect::back()->withErrors($exception->getErrors())->withInput();
-
         }
         // if invalid go back
         // if valid, try to sign in
@@ -67,6 +72,9 @@ class SessionsController extends \BaseController
         }
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy()
     {
         Auth::logout();

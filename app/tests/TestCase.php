@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class TestCase
+ */
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
 
@@ -12,9 +15,9 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         $unitTesting = true;
 
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $testEnvironment = 'testing';
 
         return require __DIR__ . '/../../bootstrap/start.php';
     }
-
 }

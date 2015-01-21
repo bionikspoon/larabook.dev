@@ -15,7 +15,6 @@ App::before(function ($request) {
     //
 });
 
-
 App::after(function ($request, $response) {
     //
 });
@@ -39,8 +38,8 @@ Route::filter('auth', function () {
             return Redirect::guest('login');
         }
     }
+    return true;
 });
-
 
 Route::filter('auth.basic', function () {
     return Auth::basic();
@@ -61,6 +60,7 @@ Route::filter('guest', function () {
     if (Auth::check()) {
         return Redirect::to('/');
     }
+    return true;
 });
 
 /*

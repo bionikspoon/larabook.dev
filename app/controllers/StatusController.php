@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class StatusController
+ */
 class StatusController extends \BaseController
 {
 
@@ -87,5 +90,4 @@ class StatusController extends \BaseController
     {
         //
     }
-
 }

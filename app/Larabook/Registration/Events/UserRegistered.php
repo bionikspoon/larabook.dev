@@ -2,6 +2,11 @@
 
 use Larabook\Users\User;
 
+/**
+ * Class UserRegistered
+ *
+ * @package Larabook\Registration\Events
+ */
 class UserRegistered
 {
 
@@ -14,5 +19,4 @@ class UserRegistered
     {
         $this->user = $user;
     }
-
 }

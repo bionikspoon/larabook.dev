@@ -1,6 +1,5 @@
 <?php namespace Larabook\Registration;
 
-
 use Larabook\Users\User;
 use Larabook\Users\UserRepository;
 use Laracasts\Commander\CommandHandler;
@@ -43,7 +42,6 @@ class RegisterUserCommandHandler implements CommandHandler
         $this->repository->save($user);
 
         $this->dispatchEventsFor($user);
-
 
         return $user;
     }

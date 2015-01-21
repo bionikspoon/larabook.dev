@@ -11,6 +11,4 @@ class SignInForm extends FormValidator
         'email'    => 'required',
         'password' => 'required',
     ];
-
-
 }

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ExampleTest
+ */
 class ExampleTest extends TestCase
 {
 
@@ -10,9 +13,9 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $crawler = $this->client->request('GET', '/');
 
         $this->assertTrue($this->client->getResponse()->isOk());
     }
-
 }

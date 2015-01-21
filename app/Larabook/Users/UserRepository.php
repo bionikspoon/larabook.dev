@@ -1,6 +1,5 @@
 <?php namespace Larabook\Users;
 
-
 /**
  * Class UserRepository
  *
@@ -20,5 +19,4 @@ class UserRepository
     {
         return $user->save();
     }
-
 }
