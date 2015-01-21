@@ -47,7 +47,6 @@ class RegistrationController extends \BaseController
 
         extract(Input::only('username', 'email', 'password'));
 
-
         /** @var string $username */
         /** @var string $email */
         /** @var string $password */

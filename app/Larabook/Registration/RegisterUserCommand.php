@@ -1,6 +1,5 @@
 <?php namespace Larabook\Registration;
 
-
 /**
  * Class RegisterUserCommand
  *
@@ -17,12 +16,10 @@ class RegisterUserCommand
      * @param $email
      * @param $password
      */
-    function __construct($username, $email, $password)
+    public function __construct($username, $email, $password)
     {
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
     }
-
-
 }
