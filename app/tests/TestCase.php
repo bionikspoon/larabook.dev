@@ -13,6 +13,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
      */
     public function createApplication()
     {
+        /** @noinspection PhpUnusedLocalVariableInspection */
         $unitTesting = true;
 
         /** @noinspection PhpUnusedLocalVariableInspection */
