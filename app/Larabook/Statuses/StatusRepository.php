@@ -32,6 +32,3 @@ class StatusRepository
         return $user->statuses()->get();
     }
 }
-
-
-
