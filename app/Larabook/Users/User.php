@@ -27,6 +27,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     use UserTrait, RemindableTrait, EventGenerator, PresentableTrait;
     /**
+     * Validation rules
+     *
      * @var array
      */
     public static $rules = [
@@ -35,6 +37,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         'password' => 'required|confirmed',
     ];
     /**
+     * Fillable fields
+     *
      * @var array
      */
     protected $fillable = ['username', 'email', 'password'];

@@ -10,7 +10,7 @@ use Laracasts\Presenter\Presenter;
 class UserPresenter extends Presenter
 {
     /**
-     * Present a link to the user's gravatar
+     * Present a link to the user's gravatar.
      *
      * @param int $size
      *

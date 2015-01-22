@@ -17,6 +17,8 @@ class PublishStatusCommandHandler implements CommandHandler
     protected $statusRepository;
 
     /**
+     * Inject status repository
+     *
      * @param \Larabook\Statuses\StatusRepository $statusRepository
      */
     public function __construct(StatusRepository $statusRepository)
@@ -25,6 +27,8 @@ class PublishStatusCommandHandler implements CommandHandler
     }
 
     /**
+     * Handler for Publish Status command
+     *
      * @param $command
      *
      * @return mixed|void
@@ -36,6 +40,7 @@ class PublishStatusCommandHandler implements CommandHandler
         $status = $this->statusRepository->save($status, $command->userId);
 
         $this->dispatchEventsFor($status);
+
         return $status;
     }
 }
