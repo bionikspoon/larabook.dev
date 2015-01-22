@@ -10,6 +10,8 @@ use Larabook\Users\User;
 class StatusRepository
 {
     /**
+     * Saves status to user
+     *
      * @param \Larabook\Statuses\Status $status
      * @param                           $userId
      *
@@ -23,6 +25,8 @@ class StatusRepository
     }
 
     /**
+     * Gets all statuses that belong to user, one to many
+     *
      * @param \Larabook\Users\User $user
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

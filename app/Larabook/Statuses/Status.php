@@ -5,7 +5,7 @@ use Larabook\Statuses\Events\StatusWasPublished;
 use Laracasts\Commander\Events\EventGenerator;
 
 /**
- * Class Status
+ * Class Status model
  *
  * @package Larabook\Statuses
  */
@@ -14,9 +14,13 @@ class Status extends Eloquent
     use EventGenerator;
 
 
+    /**
+     * @var array
+     */
     protected $fillable = ['body'];
 
     /**
+     * Publish status event
      *
      * @param $body
      *
@@ -32,7 +36,8 @@ class Status extends Eloquent
     }
 
     /**
-     * Belongs to a user
+     * Belongs to a user, one to many
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
