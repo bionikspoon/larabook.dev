@@ -5,10 +5,24 @@
  *
  * @package Larabook\Registration
  */
+/**
+ * Class RegisterUserCommand
+ *
+ * @package Larabook\Registration
+ */
 class RegisterUserCommand
 {
+    /**
+     * @var
+     */
     public $username;
+    /**
+     * @var
+     */
     public $email;
+    /**
+     * @var
+     */
     public $password;
 
     /**

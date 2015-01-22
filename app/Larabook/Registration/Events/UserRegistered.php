@@ -3,13 +3,16 @@
 use Larabook\Users\User;
 
 /**
- * Class UserRegistered
+ * Class UserRegistered Event
  *
  * @package Larabook\Registration\Events
  */
 class UserRegistered
 {
 
+    /**
+     * @var \Larabook\Users\User
+     */
     public $user;
 
     /**
