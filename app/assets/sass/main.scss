@@ -6,3 +6,8 @@ body {
 .container h1:first-of-type {
   margin-top: 0;
 }
+
+.navbar-nav > li > a.nav-gravatar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -8,6 +8,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserTrait;
 use Larabook\Registration\Events\UserRegistered;
 use Laracasts\Commander\Events\EventGenerator;
+use Laracasts\Presenter\PresentableTrait;
 use Validator;
 
 /**
@@ -24,12 +25,18 @@ use Validator;
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
 
-    use UserTrait, RemindableTrait, EventGenerator;
+    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait;
+    /**
+     * @var array
+     */
     public static $rules = [
         'username' => 'required|unique:users',
         'email'    => 'required|email|unique:users',
         'password' => 'required|confirmed',
     ];
+    /**
+     * @var array
+     */
     protected $fillable = ['username', 'email', 'password'];
     /**
      * The database table used by the model.
@@ -38,8 +45,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     protected $table = 'users';
     /**
+     * Path to the presenter for the user.
+     *
      * The attributes excluded from the model's JSON form.
      *
+     * @var array
+     */
+    protected $presenter = 'Larabook\Users\UserPresenter';
+
+    /**
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
