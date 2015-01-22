@@ -68,8 +68,9 @@ class SessionsController extends \BaseController
             // redirect to statuses
             Flash::message('Welcome back!');
 
-            return Redirect::intended('/statuses');
+            return Redirect::intended('statuses');
         }
+        return Redirect::back()->withInput()->withErrors('Username and password did not match');
     }
 
     /**
