@@ -25,10 +25,24 @@ class UserRepository
      *
      * @param int $howMany
      *
-     * @return \Illuminate\Pagination\Paginator
+     * @return User[]
      */
     public function getPaginated($howMany = 25)
     {
-        return User::simplePaginate($howMany);
+        return User::orderBy('username', 'asc')->simplePaginate($howMany);
+    }
+
+    /**
+     * Fetch a User by username
+     *
+     * @param $username
+     *
+     * @return User
+     */
+    public function findByUsername($username)
+    {
+        return User::with(['statuses' => function ($query) {
+            $query->latest();
+        }])->whereUsername($username)->first();
     }
 }

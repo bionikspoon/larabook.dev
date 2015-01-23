@@ -105,10 +105,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     /**
      * User has many status
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Larabook\Statuses\Status[]
      */
     public function statuses()
     {
         return $this->hasMany('Larabook\Statuses\Status');
+    }
+
+    /**
+     * Determine if the given User is the same as the signed in user.
+     *
+     * @param \Larabook\Users\User $user
+     *
+     * @return bool
+     */
+    public function is(User $user)
+    {
+        return $this->username == $user->username;
     }
 }
