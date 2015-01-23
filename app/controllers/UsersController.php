@@ -33,4 +33,18 @@ class UsersController extends \BaseController
 
         return View::make('users.index')->withUsers($users);
     }
+
+    /**
+     * Create a view for a single user
+     *
+     * @param $username
+     *
+     * @return View
+     */
+    public function show($username)
+    {
+        $user = $this->userRepository->findByUsername($username);
+
+        return View::make('users.show')->withUser($user);
+    }
 }

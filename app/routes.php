@@ -27,14 +27,21 @@ Route::post('login', [
 ]);
 Route::get('logout', [
     'as'   => 'logout_path',
-    'uses' => 'SessionsC ontroller@destroy'
+    'uses' => 'SessionsController@destroy'
 ]);
 
 Route::get('statuses', [
-    'as'  => 'statuses_path',
+    'as'   => 'statuses_path',
     'uses' => 'StatusController@index']);
 Route::post('statuses', [
-    'as'  => 'statuses_path',
+    'as'   => 'statuses_path',
     'uses' => 'StatusController@store']);
 
-Route::get('users', 'UsersController@index');
+Route::get('users', [
+    'as'   => 'users_path',
+    'uses' => 'UsersController@index']);
+
+Route::get('@{username}', [
+    'as'   => 'profile_path',
+    'uses' => 'UsersController@show'
+]);
