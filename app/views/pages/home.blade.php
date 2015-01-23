@@ -7,7 +7,7 @@
     <div class="jumbotron">
         <h1>Welcome to Larabook!</h1>
 
-        <p>Welcome tot he primer place to talk about laravel with others. Why don't you sign up to see what the fuss is
+        <p>Welcome to the prime place to talk about laravel with others. Why don't you sign up to see what the fuss is
             about?</p>
 
         @if (!$currentUser)
@@ -17,4 +17,3 @@
         @endif
     </div>
 @stop
-
