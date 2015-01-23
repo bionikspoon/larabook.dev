@@ -21,7 +21,8 @@
     "barryvdh/laravel-ide-helper": "1.11.*@dev",
     "doctrine/dbal": "2.6.*@dev",
     "barryvdh/laravel-debugbar": "1.8.*@dev",
-    "phpdocumentor/phpdocumentor": "2.*"
+    "phpdocumentor/phpdocumentor": "2.*",
+    "fzaninotto/faker": "1.4.*"
   },
   "autoload": {
     "classmap": [
