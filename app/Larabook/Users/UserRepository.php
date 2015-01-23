@@ -19,4 +19,16 @@ class UserRepository
     {
         return $user->save();
     }
+
+    /**
+     * Get a paginated list of all users.
+     *
+     * @param int $howMany
+     *
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function getPaginated($howMany = 25)
+    {
+        return User::simplePaginate($howMany);
+    }
 }
