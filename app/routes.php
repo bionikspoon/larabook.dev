@@ -32,10 +32,10 @@ Route::get('logout', [
 
 Route::get('statuses', [
     'as'   => 'statuses_path',
-    'uses' => 'StatusController@index']);
+    'uses' => 'StatusesController@index']);
 Route::post('statuses', [
     'as'   => 'statuses_path',
-    'uses' => 'StatusController@store']);
+    'uses' => 'StatusesController@store']);
 
 Route::get('users', [
     'as'   => 'users_path',

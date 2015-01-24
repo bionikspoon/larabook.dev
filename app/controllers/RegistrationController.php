@@ -1,8 +1,7 @@
 <?php
 
-use Larabook\Core\CommandBus;
+use Larabook\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
-use Larabook\Users\User;
 
 /**
  * Class RegistrationController
@@ -10,14 +9,20 @@ use Larabook\Users\User;
 class RegistrationController extends \BaseController
 {
 
-    use CommandBus;
+    /**
+     * @var \Larabook\Forms\RegistrationForm
+     */
+    private $registrationForm;
 
     /**
      * Filter Guests
+     *
+     * @param \Larabook\Forms\RegistrationForm $registrationForm
      */
-    public function __construct()
+    public function __construct(RegistrationForm $registrationForm)
     {
         $this->beforeFilter('guest');
+        $this->registrationForm = $registrationForm;
     }
 
 
@@ -39,20 +44,9 @@ class RegistrationController extends \BaseController
      */
     public function store()
     {
-        $validator = User::validator(Input::all(), User::$rules);
+        $this->registrationForm->validate(Input::all());
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }
-
-        extract(Input::only('username', 'email', 'password'));
-
-        /** @var string $username */
-        /** @var string $email */
-        /** @var string $password */
-        $user = $this->execute(
-            new RegisterUserCommand($username, $email, $password)
-        );
+        $user = $this->execute(RegisterUserCommand::class);
 
         Auth::login($user);
 

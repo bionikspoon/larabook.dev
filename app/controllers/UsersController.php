@@ -39,7 +39,7 @@ class UsersController extends \BaseController
      *
      * @param $username
      *
-     * @return View
+     * @return Response
      */
     public function show($username)
     {

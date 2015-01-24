@@ -1,10 +1,13 @@
 <?php
+use Laracasts\Commander\CommanderTrait;
 
 /**
  * Class BaseController
  */
 class BaseController extends Controller
 {
+    use CommanderTrait;
+
 
     /**
      * Setup the layout used by the controller.
