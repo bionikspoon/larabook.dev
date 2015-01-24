@@ -34,7 +34,7 @@ class Status extends Eloquent
      *
      * @param $body
      *
-     * @return static
+     * @return Status
      */
     public static function publish($body)
     {
@@ -48,7 +48,7 @@ class Status extends Eloquent
     /**
      * Belongs to a user, one to many
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Larabook\Users\User
      */
     public function user()
     {

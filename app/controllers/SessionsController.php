@@ -51,17 +51,12 @@ class SessionsController extends \BaseController
      *
      * @return Response
      */
-    /** @noinspection PhpInconsistentReturnPointsInspection */
     public function store()
     {
         // fetch the form input
         $input = Input::only('email', 'password');
         // validate the form
-        try {
-            $this->signInForm->validate($input);
-        } catch (FormValidationException $exception) {
-            return Redirect::back()->withErrors($exception->getErrors())->withInput();
-        }
+        $this->signInForm->validate($input);
         // if invalid go back
         // if valid, try to sign in
         if (Auth::attempt($input)) {

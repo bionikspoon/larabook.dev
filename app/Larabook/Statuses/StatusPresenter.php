@@ -11,7 +11,7 @@ class StatusPresenter extends Presenter
 {
 
     /**
-     * Display how long it hass been since the publish date.
+     * Display how long it has been since the publish date.
      *
      * @return mixed
      */

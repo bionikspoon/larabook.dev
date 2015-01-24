@@ -6,7 +6,7 @@
 class PagesController extends \BaseController
 {
     /**
-     * @return \Illuminate\View\View
+     * @return Response
      */
     public function home()
     {
@@ -14,7 +14,7 @@ class PagesController extends \BaseController
     }
 
     /**
-     * @return \Illuminate\View\View
+     * @return Response
      */
     public function phpinfo()
     {
