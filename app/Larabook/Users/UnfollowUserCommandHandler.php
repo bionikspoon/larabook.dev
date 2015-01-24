@@ -3,11 +3,11 @@
 use Laracasts\Commander\CommandHandler;
 
 /**
- * Class FollowUserCommandHandler
+ * Class UnfollowUserCommandHandler
  *
  * @package Larabook\Users
  */
-class FollowUserCommandHandler implements CommandHandler
+class UnfollowUserCommandHandler implements CommandHandler
 {
     /**
      * @var \Larabook\Users\UserRepository
@@ -23,18 +23,15 @@ class FollowUserCommandHandler implements CommandHandler
     }
 
     /**
-     * Handle the command
+     * Handle the command.
      *
-     * @param $command
+     * @param object $command
      *
-     * @return User
+     * @return void
      */
     public function handle($command)
     {
         $user = $this->userRepo->findById($command->userId);
-
-        $this->userRepo->follow($command->userIdToFollow, $user);
-
-        return $user;
+        $this->userRepo->unfollow($command->userIdToUnfollow, $user);
     }
 }

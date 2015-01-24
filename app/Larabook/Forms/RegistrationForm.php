@@ -9,6 +9,7 @@ class RegistrationForm extends FormValidator
 {
     /**
      * Rules for registration
+     *
      * @var array
      */
     protected $rules = [

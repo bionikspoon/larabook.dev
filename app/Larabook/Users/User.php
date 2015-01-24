@@ -24,7 +24,7 @@ use Laracasts\Presenter\PresentableTrait;
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
 
-    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait;
+    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait, FollowableTrait;
     /**
      * Validation rules
      *
@@ -113,27 +113,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
 
         return $this->username == $user->username;
-    }
-
-    /**
-     * Determine if current user follows another user
-     *
-     * @param \Larabook\Users\User $otherUser
-     *
-     * @return bool
-     */
-    public function isFollowedBy(User $otherUser)
-    {
-        $idsWhoOtherUserFollows = $otherUser->follows()->lists('followed_id');
-
-        return in_array($this->id, $idsWhoOtherUserFollows);
-    }
-
-    /**
-     * @return User[]
-     */
-    public function follows()
-    {
-        return $this->belongsToMany(self::class, 'follows', 'follower_id', 'followed_id')->withTimestamps();
     }
 }
