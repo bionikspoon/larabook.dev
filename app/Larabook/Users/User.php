@@ -9,7 +9,6 @@ use Illuminate\Auth\UserTrait;
 use Larabook\Registration\Events\UserRegistered;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
-use Validator;
 
 /**
  * User
@@ -103,12 +102,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     /**
      * Determine if the given User is the same as the signed in user.
      *
-     * @param \Larabook\Users\User $user
+     * @param \Larabook\Users\User|null $user
      *
      * @return bool
      */
-    public function is(User $user)
+    public function is($user)
     {
+        if(is_null($user)) return false;
         return $this->username == $user->username;
     }
 }

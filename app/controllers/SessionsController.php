@@ -1,7 +1,6 @@
 <?php
 
 use Larabook\Forms\SignInForm;
-use Laracasts\Validation\FormValidationException;
 
 /**
  * Class SessionsController
@@ -59,13 +58,16 @@ class SessionsController extends \BaseController
         $this->signInForm->validate($input);
         // if invalid go back
         // if valid, try to sign in
-        if (Auth::attempt($input)) {
-            // redirect to statuses
-            Flash::message('Welcome back!');
+        if (!Auth::attempt($input)) {
+            //Flash::message('We were unable to sign you in. Please check your credentials and try again!');
 
-            return Redirect::intended('statuses');
+            return Redirect::back()->withInput()->withErrors('Username and password did not match');
         }
-        return Redirect::back()->withInput()->withErrors('Username and password did not match');
+
+        // redirect to statuses
+        Flash::message('Welcome back!');
+
+        return Redirect::intended('statuses');
     }
 
     /**
