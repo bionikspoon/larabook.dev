@@ -24,7 +24,7 @@ use Laracasts\Presenter\PresentableTrait;
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
 
-    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait;
+    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait, FollowableTrait;
     /**
      * Validation rules
      *
@@ -108,7 +108,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     public function is($user)
     {
-        if(is_null($user)) return false;
+        if (is_null($user)) {
+            return false;
+        }
+
         return $this->username == $user->username;
     }
 }

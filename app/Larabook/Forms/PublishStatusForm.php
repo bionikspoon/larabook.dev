@@ -12,6 +12,7 @@ class PublishStatusForm extends FormValidator
 {
     /**
      * Rules to validate
+     *
      * @var array
      */
     protected $rules = [

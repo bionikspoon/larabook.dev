@@ -35,4 +35,19 @@ class StatusRepository
     {
         return $user->statuses()->with('user')->latest()->get();
     }
+
+    /**
+     * Get the feed for a user.
+     *
+     * @param \Larabook\Users\User $user
+     *
+     * @return Status[]
+     */
+    public function getFeedForUser(User $user)
+    {
+        $userIds = $user->followedUsers()->lists('followed_id');
+        $userIds[] = $user->id;
+
+        return Status::whereIn('user_id', $userIds)->latest()->get();
+    }
 }

@@ -1,10 +1,10 @@
 <?php namespace Larabook\Registration;
 
-/**
- * Class RegisterUserCommand
- *
- * @package Larabook\Registration
- */
+    /**
+     * Class RegisterUserCommand
+     *
+     * @package Larabook\Registration
+     */
 /**
  * Class RegisterUserCommand
  *
