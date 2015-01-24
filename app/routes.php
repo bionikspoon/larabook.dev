@@ -32,16 +32,28 @@ Route::get('logout', [
 
 Route::get('statuses', [
     'as'   => 'statuses_path',
-    'uses' => 'StatusesController@index']);
+    'uses' => 'StatusesController@index'
+]);
 Route::post('statuses', [
     'as'   => 'statuses_path',
-    'uses' => 'StatusesController@store']);
+    'uses' => 'StatusesController@store'
+]);
 
 Route::get('users', [
     'as'   => 'users_path',
-    'uses' => 'UsersController@index']);
+    'uses' => 'UsersController@index'
+]);
 
 Route::get('@{username}', [
     'as'   => 'profile_path',
     'uses' => 'UsersController@show'
+]);
+
+Route::post('follows', [
+    'as'   => 'follows_path',
+    'uses' => 'FollowsController@store'
+]);
+Route::post('follows/{id}', [
+    'as'   => 'unfollows_path',
+    'uses' => 'FollowsController@destroy'
 ]);
