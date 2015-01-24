@@ -31,7 +31,7 @@ class PublishStatusCommandHandler implements CommandHandler
      *
      * @param $command
      *
-     * @return mixed|void
+     * @return Status|void
      */
     public function handle($command)
     {
