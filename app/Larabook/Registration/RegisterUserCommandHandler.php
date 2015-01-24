@@ -15,12 +15,12 @@ class RegisterUserCommandHandler implements CommandHandler
     use DispatchableTrait;
 
     /**
-     * @var \Larabook\Users\UserRepository
+     * @var UserRepository
      */
     protected $repository;
 
     /**
-     * Inject UserRpository
+     * Inject UserRepository
      *
      * @param UserRepository $repository
      */
@@ -34,7 +34,7 @@ class RegisterUserCommandHandler implements CommandHandler
      *
      * @param $command
      *
-     * @return mixed
+     * @return User|void
      */
     public function handle($command)
     {

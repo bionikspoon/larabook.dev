@@ -13,7 +13,7 @@ class StatusRepository
      * Saves status to user
      *
      * @param \Larabook\Statuses\Status $status
-     * @param                           $userId
+     * @param integer                   $userId
      *
      * @return mixed
      */

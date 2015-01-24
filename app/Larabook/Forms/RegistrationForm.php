@@ -3,7 +3,7 @@
 use Laracasts\Validation\FormValidator;
 
 /**
- *  registrationform validator
+ *  registration form validator
  */
 class RegistrationForm extends FormValidator
 {
