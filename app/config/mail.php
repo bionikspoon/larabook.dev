@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver'     => 'smtp',
+    'driver'     => 'log',  //TODO set for production
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'from'       => ['address' => null, 'name' => null],
+    'from'       => ['address' => 'no-reply@larabook.app', 'name' => 'Larabook'],
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
