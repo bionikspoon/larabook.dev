@@ -15,8 +15,6 @@ Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 Route::get('register', ['as' => 'register_path', 'uses' => 'RegistrationController@create']);
 Route::post('register', ['as' => 'register_path', 'uses' => 'RegistrationController@store']);
 
-Route::get('phpinfo', ['as' => 'phpinfo', 'uses' => 'PagesController@phpinfo']); //TODO remove
-
 Route::get('login', [
     'as'   => 'login_path',
     'uses' => 'SessionsController@create'

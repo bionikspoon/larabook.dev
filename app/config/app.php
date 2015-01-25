@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'url'             => 'http://localhost',
+    'url'             => 'http://larabook.app',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -118,7 +118,8 @@ return [
         'Laracasts\Commander\CommanderServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
-        'Laracasts\Flash\FlashServiceProvider'
+        'Laracasts\Flash\FlashServiceProvider',
+        'Larabook\Providers\EventServiceProvider',
     ],
     /*
     |--------------------------------------------------------------------------

@@ -7,7 +7,7 @@ use Larabook\Users\User;
  *
  * @package Larabook\Registration\Events
  */
-class UserRegistered
+class UserHasRegistered
 {
 
     /**
