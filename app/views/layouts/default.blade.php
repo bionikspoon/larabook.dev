@@ -28,5 +28,14 @@
 {{HTML::script('js/jquery-1.11.2.js')}}
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 {{HTML::script('js/bootstrap.js')}}
+<script>
+    $('#flash-overlay-modal').modal();
+    $('.comments__create-form').on('keydown', function(e){
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            $(this).submit();
+        }
+    });
+</script>
 </body>
 </html>

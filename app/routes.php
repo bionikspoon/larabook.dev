@@ -27,7 +27,9 @@ Route::get('logout', [
     'as'   => 'logout_path',
     'uses' => 'SessionsController@destroy'
 ]);
-
+/**
+ * Statuses
+ */
 Route::get('statuses', [
     'as'   => 'statuses_path',
     'uses' => 'StatusesController@index'
@@ -36,7 +38,13 @@ Route::post('statuses', [
     'as'   => 'statuses_path',
     'uses' => 'StatusesController@store'
 ]);
-
+Route::post('statuses/{id}/comments', [
+    'as'   => 'comment_path',
+    'uses' => 'CommentsController@store'
+]);
+/**
+ * Users
+ */
 Route::get('users', [
     'as'   => 'users_path',
     'uses' => 'UsersController@index'
