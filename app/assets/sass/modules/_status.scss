@@ -70,6 +70,9 @@
   border: 1px solid #e3e3e3;
   border-top: none;
   border-radius: 0;
+  min-height: 2.5em;
+  height: 2.5em;
+  resize: vertical;
 }
 
 .comments {
@@ -77,9 +80,9 @@
 }
 
 .comments__comment {
-  background: darken(white, 10%);
+  background: darken(white, 5%);
   margin-top: 0;
-  border: 1px solid darken(white, 15%);
+  border: 1px solid darken(white, 10%);
   //noinspection CssOverwrittenProperties
   border-bottom: 1px solid #e3e3e3;
 }
